@@ -1,0 +1,26 @@
+ apiVersion: multicloud.cluster.gke.io/v1
+ kind: AWSManagementService
+ metadata:
+   name: management
+ spec:
+   version: aws-1.8.2-gke.2
+   region: us-east-1
+   authentication:
+     awsIAM:
+       adminIdentityARNs:
+       - arn:aws:iam::488800143323:user/awsstudent
+   kmsKeyARN: arn:aws:kms:us-east-1:488800143323:key/2ae973f8-4075-4a0f-86ae-3a5896d15565
+   googleCloud:
+     projectID: qwiklabs-gcp-01-8fe92c1fdc26
+     serviceAccountKeys:
+       managementService: /home/student_02_af8c0c53c898/istio-1.10.4-asm.14/anthos-aws/management-key.json
+       connectAgent: /home/student_02_af8c0c53c898/istio-1.10.4-asm.14/anthos-aws/hub-key.json
+       node: /home/student_02_af8c0c53c898/istio-1.10.4-asm.14/anthos-aws/node-key.json
+   dedicatedVPC:
+     vpcCIDRBlock: 10.0.0.0/16
+     availabilityZones:
+     - us-east-1
+     privateSubnetCIDRBlocks:
+     - 10.0.0.0/25
+     publicSubnetCIDRBlocks:
+     - 10.0.0.0/32
