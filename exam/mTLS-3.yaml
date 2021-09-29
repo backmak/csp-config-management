@@ -2,7 +2,7 @@ apiVersion: "security.istio.io/v1beta1"
 kind: "PeerAuthentication"
 metadata:
   name: "namespace-policy"
-  namespace: "gatekeeper-system"
+  namespace: "resource-group-controller-manager"
 spec:
   mtls:
     mode: STRICT
