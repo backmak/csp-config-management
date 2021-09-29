@@ -1,3 +1,7 @@
 constraint: constraints/compute.trustedImageProjects
 listPolicy:
-  allValues: DENY
+   allowedValues:
+    - projects/debian-cloud
+    - projects/cos-cloud
+   deniedValues:
+    - projects/centos-8
